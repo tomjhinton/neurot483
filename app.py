@@ -145,7 +145,7 @@ def create( ):
     lyrics = lyrics.json()
 
 
-    print(lyrics)
+    # print(lyrics)
 
     if(lyrics['message']['body']['lyrics']):
         i = lyrics['message']['body']['lyrics']['lyrics_body'].upper().split('\n')
