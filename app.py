@@ -145,12 +145,12 @@ def create( ):
     lyrics = lyrics.json()
 
 
-    # print(lyrics)
+    # print('lyrics_body' in lyrics['message']['body']['lyrics'])
 
-    if(lyrics['message']['body']['lyrics']):
+    if('lyrics_body' in lyrics['message']['body']['lyrics']):
         i = lyrics['message']['body']['lyrics']['lyrics_body'].upper().split('\n')
         i = list(filter(lambda x : len(x) > 4 , i))
-    elif(bool(lyrics['message']['body']['lyrics']) == False):
+    elif('lyrics_body' in lyrics['message']['body']['lyrics'] == False):
             lyrics = requests.get(
               'https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey='
               + mapikc +
